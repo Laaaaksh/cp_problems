@@ -33,8 +33,73 @@ cin.tie(0);
 
 // }
 // int128_t temp;
-int t; cin >> t;
-int arr[t]; rep(i,0,t-1) cin >> arr[i];
-priority_queue<pi,vector<pi>,greater<pi>>pq;
-return 0;
+// 8
+// 2 3 4 4 2 1 3 1
+// 5
+// 1 2 4 3 3
+int t,count1=0,count2=0,count3=0,count4=0; 
+cin >> t;
+int arr[t];
+int cars = 0;
+rep(i,0,t-1){
+   cin >> arr[i];
+   if(arr[i]==1)
+      count1++; // 0
+   else if(arr[i]==2)
+      count2++; // 1
+   else if(arr[i]==3)
+      count3++; // 0
+   else if(arr[i]==4)
+      count4++; // 0
+}
+cars+=count4;
+// cars = 1
+while(count3 > 0 && count1 > 0)
+{
+   cars++;
+   count3--;
+   count1--;
+   // cars = 2
+}
+// count3 will be 0 or count1 will be 0
+while(count2 > 1)
+{
+cars++;
+count2 = count2 - 2;
+}
+// count2 will be either 1 or 0
+while(count3)
+{
+   cars++;
+   count3--;
+   // cars = 3;
+}
+while(count1>0)
+{
+   if(count2)
+   {
+      if(count1 >=2)
+      {
+         cars++;
+         count2--;
+         count1 = count1 - 2;
+      }
+      else
+      {
+         cars++;
+         count1--;
+         count2--;
+      }
+   }
+   else{
+      cars++;
+      count1 = count1 - 4;
+   }
+}
+while(count2)
+{
+   count2--;
+   cars++;
+}
+cout << cars;
 }
