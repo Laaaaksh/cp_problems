@@ -1,6 +1,6 @@
 // @author: Laksh Sadhwani
 // Github : https://github.com/Laaaaksh
-// Code : bobby prize
+// Code : pizzaforces.cpp
 /* n<=10 - O(n!) 
    n<=20 - O(2^n)
    n<=500 - O(n^3)
@@ -30,14 +30,5 @@ cin.tie(0);
 // getline(cin,x);
 
 /*CODE BEGINS HERE*/
-
-ll t;
-cin >> t;
-while(t--)
-{
-   ll n;
-   cin >> n;
-   cout << (max(6LL,n+1)/2)*5 << "\n";
-}
-return 0; 
+ 
 }
