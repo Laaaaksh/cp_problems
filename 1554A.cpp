@@ -1,8 +1,13 @@
 // @author: Laksh Sadhwani
 // Github : https://github.com/Laaaaksh
-// Code : A
-
-  // n<=10^6 - O(nlogn)
+// Code : digit sum
+/* Approximate Time Complexity of the code
+   n<=10 - O(n!) 
+   n<=20 - O(2^n)
+   n<=500 - O(n^3)
+   n<=5000 - O(n^2)
+   n<=10^6 - O(nlogn) and O(n)
+   n is large - O(1) or O(log(n))*/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -17,12 +22,18 @@ typedef long double ld;
 #define f first;
 #define s second;
 #define rep(i,a,b) for(int i = a; i<=b;i++)
+#define replong(i,a,b) for(ll i=a;i<=b;i++)
 
 const ld Pi = acos(-1);
 const int inf = 1e9;
 const int mod = 1e9 + 7;
-
-
+void solve(){
+  ll n,ans=-1; cin >> n;
+  vector<ll> arr(n);
+  replong(i,0,n-1) cin >> arr[i];
+  replong(i,1,n-1) ans = max(ans,arr[i]*arr[i-1]);
+  cout << ans << "\n";
+}
 int main()
 {
 ios::sync_with_stdio(0);
@@ -32,26 +43,13 @@ cin.tie(0);
 //    freopen("input.txt","r",stdin);
 //    freopen("output.txt","w",stdout);
 // #endif
-/* Code begins here */
-ld t; cin >> t;
+
+/*..............begin..............*/
+ll t; cin>>t;
 while(t--)
 {
- ll n ; cin >> n;
- ll arr[n];
- for(ll i = 0 ; i < n ; i++)
- 	cin >> arr[i];
- sort(arr,arr + n);
- ld sum1 = 0.0;
- ld sum2 = 0.0;
- ll count = 0;
-  for(ll i = 0 ; i < n - 1 ; i++){
- 	sum1 = sum1 + (long double) arr[i];	
- 	count++;
-  }
-  sum1 = (ld) sum1 / (ld)count;
-  sum2 = arr[n-1];
-  ld sum = (ld) sum1 + sum2;
-  cout << setprecision(7) << sum << "\n";
+  solve();
 }
-	return 0;
+//..............end.........//
+return 0;
 }
