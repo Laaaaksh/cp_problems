@@ -1,2 +1,2 @@
 # cp_problems
-Hi there! I upload solutions to the problems from code forces here. I code in CPP for now.
+Hi there!I will upload one problem solution to that contest . Further other solutions can be searched through my github profile.
