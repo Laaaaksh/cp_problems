@@ -1,5 +1,5 @@
 // @author: Laksh Sadhwani
-// Github : https://github.com/Laaaaksh
+// Github : https://github.com/attentionfs
 // Code : digit sum
 /* Approximate Time Complexity of the code
    n<=10 - O(n!) 
