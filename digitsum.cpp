@@ -1,5 +1,5 @@
 // @author: Laksh Sadhwani
-// Github : https://github.com/attentionfs
+// Github : https://github.com/Laaaaksh
 // Code : digit sum
 /* n<=10 - O(n!) 
    n<=20 - O(2^n)
